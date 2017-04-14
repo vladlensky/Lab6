@@ -12,11 +12,15 @@ import java.text.AttributedCharacterIterator;
 public class EditWindow extends JFrame {
     JPanel panel = new JPanel();
     public EditWindow(){
+        setFocusable(true);
+        setResizable(false);
+        setSize(300,350);
+        setVisible(true);
         panel.setBackground(Color.white);
         panel.setLayout(null);
         add(panel);
         JTextField field = new JTextField(20);
-        field.setSelectionColor(Color.yellow);
+        field.setSelectionColor(Color.green);
         field.setSize(230,20);
         field.setLocation(27,30);
         //
@@ -34,7 +38,7 @@ public class EditWindow extends JFrame {
         spin.setSize(60,20);
         JTextField tf = ((JSpinner.DefaultEditor) spin.getEditor()).getTextField();
         tf.setEditable(false);
-        tf.setForeground(Color.BLUE);
+        tf.setForeground(Color.green);
         tf.setBackground(Color.WHITE);
         spin.setLocation(70,55);
         //
@@ -66,7 +70,7 @@ public class EditWindow extends JFrame {
         False.setBackground(Color.WHITE);
         //
         JButton canc = new JButton("Cancel");
-        canc.setBackground(Color.red);
+        canc.setBackground(Color.green);
         JButton ok = new JButton("Ok");
         ok.setBackground(Color.green);
         canc.setSize(80,30);
@@ -74,29 +78,27 @@ public class EditWindow extends JFrame {
         ok.setSize(80,30);
         ok.setLocation(160,255);
         //
-        /*
-        String[] data = new String[10];
+        String[] data = new String[4];
         data[0]="kek";
         data[1]="kukarek";
         data[2]="kesk";
         data[3]="kukareks";
         JList list = new JList(data);
-        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         list.setLayoutOrientation(JList.VERTICAL);
-        list.setSize(80,60);
-        list.setLocation(30,90);
         list.setVisibleRowCount(3);
-        panel.add(list);
-        */
+        list.setFont(new Font("Verdana", Font.PLAIN, 12));
+        JScrollPane scroll = new JScrollPane(list);
+        scroll.setSize(150,75);
+        scroll.setLocation(30,100);
         //
         JButton Add = new JButton("Add");
         JButton Del = new JButton("Delete");
-        Add.setBackground(Color.blue);
-        Del.setBackground(Color.blue);
+        Add.setBackground(Color.green);
+        Del.setBackground(Color.green);
         Add.setSize(80,30);
-        Add.setLocation(200,95);
+        Add.setLocation(200,100);
         Del.setSize(80,30);
-        Del.setLocation(200,130);
+        Del.setLocation(200,143);
         panel.add(True);
         panel.add(name);
         panel.add(False);
@@ -109,5 +111,6 @@ public class EditWindow extends JFrame {
         panel.add(label);
         panel.add(ok);
         panel.add(canc);
+        panel.add(scroll);
     }
 }

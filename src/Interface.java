@@ -28,8 +28,7 @@ public class Interface {
         JScrollPane scroll = new JScrollPane(collections);
         scroll.setPreferredSize(new Dimension(350,500));
         panelu.add(scroll,new GridBagConstraints(0,0,1,1,1,1,
-                GridBagConstraints.CENTER, GridBagConstraints.BOTH,new Insets(1,1,1,1)
-                ,0,0));
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,new Insets(1,1,1,1),0,0));
         panelu.setVisible(true);
         String[] a= {"a", "a","a"};
         String[] b={"b","b","b"};
@@ -54,10 +53,8 @@ public class Interface {
         jf.add(panelc);
         jf.setVisible(true);
         JFrame n = new EditWindow();
-        n.setFocusable(true);
-        n.setSize(300,350);
+        n.setResizable(false);
         n.setVisible(true);
-
     }
     public static void main(String[] args){
         new Interface();
