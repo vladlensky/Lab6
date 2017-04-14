@@ -53,9 +53,9 @@ public class Interface {
         panelc.add(deleteButton);
         jf.add(panelc);
         jf.setVisible(true);
-        JWindow n = new EditWindow();
+        JFrame n = new EditWindow();
         n.setFocusable(true);
-        n.setSize(400,200);
+        n.setSize(300,350);
         n.setVisible(true);
 
     }
